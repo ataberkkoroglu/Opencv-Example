@@ -1,0 +1,22 @@
+import cv2,numpy as np,os
+
+os.chdir("C:/Users/asus/Desktop/Fotoğraf İşlemleri")
+img1=cv2.imread("Ataberk.jpg")
+img2=cv2.imread("AtaberkBlur.jpg")
+print(img1.shape,img2.shape,sep='\n')
+bit_and=cv2.bitwise_and(img2,img1)
+bit_or=cv2.bitwise_or(img2,img1)
+bit_xor=cv2.bitwise_xor(img2,img1)
+bit_not2=cv2.bitwise_not(img2)
+bit_not=cv2.bitwise_not(img1)
+
+cv2.imshow("Ataberk.jpg",img1)
+cv2.imshow("AtaberkBlur.jpg",img2)
+cv2.imshow("Bit_And",bit_and)
+cv2.imshow("Bit_Or",bit_or)
+cv2.imshow("Bit_Xor",bit_xor)
+cv2.imwrite("Art.png",bit_xor)
+cv2.imshow("Bit_Not",bit_not)
+cv2.imshow("Bit_Not2",bit_not2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()

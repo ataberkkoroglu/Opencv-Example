@@ -12,6 +12,7 @@ image=canvas[196:316,196:316]
 #cv2.imshow("Croped Img",image)
 cv2.rectangle(canvas2,(226,226),(286,286),(255,0,0),-1)
 add=cv2.add(canvas,canvas2)
+cv2.imshow("Add",add)
 dst=cv2.addWeighted(canvas,0.7,canvas2,0.3,0) #f(x,y)=x*a+y*b+c mantığı
 print(add[256,256])
 #cv2.imshow("Canvas2",add)
